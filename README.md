@@ -3,13 +3,15 @@ About pylhe-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pylhe-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/scikit-hep/pylhe
+Home: https://pylhe.readthedocs.io/
 
 Package license: Apache-2.0
 
-Summary: A small package to get structured data out of Les Houches Event files
+Summary: A lightweight Python interface to Les Houches Event files
 
 Development: https://github.com/scikit-hep/pylhe
+
+Documentation: https://pylhe.readthedocs.io/
 
 Current build status
 ====================
