@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  version: "1.0.4"
+  python_min: "3.9"
+
+package:
+  name: pylhe
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pylhe/pylhe-${{ version }}.tar.gz
+  sha256: b0a2e00a99d3e50ec23af1c2243d1afdb615a19766c4bb84a39575a27581a118
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - hatchling >=1.13.0
+    - hatch-vcs >=0.3.0
+  run:
+    - awkward >=2.7
+    - python-graphviz >=0.19
+    - particle >=0.25
+    - python >=${{ python_min }}
+    - vector >=1.5.2
+
+tests:
+  - python:
+      imports:
+        - pylhe
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+      pip_check: true
+
+about:
+  summary: A lightweight Python interface to Les Houches Event files
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://pylhe.readthedocs.io/
+  repository: https://github.com/scikit-hep/pylhe
+  documentation: https://pylhe.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - APN-Pucky
+    - matthewfeickert
+    - eduardo-rodrigues
+    - lukasheinrich
+    - conda-forge/scikit-hep
